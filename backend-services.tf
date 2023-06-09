@@ -44,7 +44,7 @@ resource "aws_elasticache_cluster" "javapp-cache" {
     subnet_group_name = aws_elasticache_subnet_group.javapp-ecache-subgrp.name
 }
 
-#Amazon MQ
+# Amazon MQ
 
 resource "aws_mq_broker" "javapp-rmq" {
     broker_name = "javapp-rmq"
