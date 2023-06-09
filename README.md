@@ -2,8 +2,6 @@
 
 Terraform: Deploy sample java application to AWS Beanstalk
 
-This sample uses terraform modules.
-
 ### AWS Resources:-
 
 - VPC: Subnets, route tables, NAT Gateway with Elastic IP, Internet Gateway, Security groups, Elastic Load Balancer, DNS resolution, ACLs
@@ -11,3 +9,5 @@ This sample uses terraform modules.
 - AWS Beanstalk
 - RDS
 - Amazon MQ
+
+This sample uses terraform modules: https://registry.terraform.io/
