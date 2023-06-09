@@ -1,0 +1,4 @@
+/.terraform
+/auth
+javappkey
+*.pub
