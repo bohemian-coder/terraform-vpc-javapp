@@ -34,7 +34,7 @@ resource "aws_security_group" "javapp-bastion-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = var.MYIP
+    cidr_blocks = [var.MYIP]
   }
 }
 

@@ -13,7 +13,7 @@ resource "aws_db_instance" "javapp-rds" {
   engine                 = "mysql"
   engine_version         = "5.6.34"
   instance_class         = "db.t2.micro"
-  name                   = var.dbname
+  db_name                = var.dbname
   username               = var.dbuser
   password               = file(var.dbpass)
   parameter_group_name   = "default.mysql5.6"
@@ -31,14 +31,14 @@ resource "aws_elasticache_subnet_group" "javapp-ecache-subgrp" {
 }
 
 resource "aws_elasticache_cluster" "javapp-cache" {
-  cluster_id             = "javapp-cache"
-  engine                 = "memcached"
-  node_type              = "cache.t2.micro"
-  num_cache_nodes        = 1
-  parameter_group_name   = "default.memcached1.5"
-  port                   = 11211
-  vpc_security_group_ids = [aws_security_group.javapp-backend-sg.id]
-  subnet_group_name      = aws_elasticache_subnet_group.javapp-ecache-subgrp.name
+  cluster_id           = "javapp-cache"
+  engine               = "memcached"
+  node_type            = "cache.t2.micro"
+  num_cache_nodes      = 1
+  parameter_group_name = "default.memcached1.5"
+  port                 = 11211
+  security_group_ids   = [aws_security_group.javapp-backend-sg.id]
+  subnet_group_name    = aws_elasticache_subnet_group.javapp-ecache-subgrp.name
 }
 
 # Amazon MQ

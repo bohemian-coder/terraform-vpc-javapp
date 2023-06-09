@@ -1,6 +1,6 @@
 resource "aws_elastic_beanstalk_environment" "javapp-bean-prod-env" {
   name                = "javapp-bean-prod-env"
-  application         = aws_elastic_beanstalk_application.javapp-bean-prod
+  application         = aws_elastic_beanstalk_application.javapp-bean-prod.name
   solution_stack_name = "64bit Amazon Linux 2 v4.3.8 running Tomcat 8.5 Corretto 11"
   cname_prefix        = "javapp-bean-prod-domain"
   setting {
@@ -119,6 +119,6 @@ resource "aws_elastic_beanstalk_environment" "javapp-bean-prod-env" {
     value     = aws_security_group.javapp-beanstalk-elb-sg.id
   }
 
-  depends_on = [aws_security_group.aws_security_group.javapp-beanstalk-elb-sg, aws_security_group.aws_security_group.javapp-beanstalk-prod-sg]
+  depends_on = [aws_security_group.javapp-beanstalk-elb-sg, aws_security_group.javapp-beanstalk-prod-sg]
 
 }

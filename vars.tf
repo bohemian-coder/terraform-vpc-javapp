@@ -27,7 +27,7 @@ variable "rabbitmquser" {
   default = "rabbit"
 }
 variable "rabbitmqpass" {
-  default = "/auth/rmqpass.txt"
+  default = "./auth/rmqpass.txt"
 }
 variable "dbuser" {
   default = "admin"
@@ -36,7 +36,7 @@ variable "dbname" {
   default = "accounts"
 }
 variable "dbpass" {
-  default = "/auth/dbpass.txt"
+  default = "./auth/dbpass.txt"
 }
 variable "instance_count" {
   default = "1"
