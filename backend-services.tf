@@ -28,9 +28,6 @@ resource "aws_db_instance" "javapp-rds" {
 resource "aws_elasticache_subnet_group" "javapp-ecache-subgrp" {
   name       = "javapp-ecache-subgrp"
   subnet_ids = [module.vpc.private_subnets[0], module.vpc.private_subnets[1], module.vpc.private_subnets[2]]
-  tags = {
-    Description = "RDS Subnet group"
-  }
 }
 
 resource "aws_elasticache_cluster" "javapp-cache" {
