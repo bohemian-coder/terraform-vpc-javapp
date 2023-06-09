@@ -1,3 +1,4 @@
+# AWS Beanstalk environment setup
 resource "aws_elastic_beanstalk_environment" "javapp-bean-prod-env" {
   name                = "javapp-bean-prod-env"
   application         = aws_elastic_beanstalk_application.javapp-bean-prod.name

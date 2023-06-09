@@ -1,3 +1,4 @@
+# Security groups for all EC2 instances
 resource "aws_security_group" "javapp-beanstalk-elb-sg" {
   name        = "javapp-beanstalk-elb-sg"
   description = "Security group for beanstalk-elb"

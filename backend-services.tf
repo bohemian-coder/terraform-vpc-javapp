@@ -1,3 +1,5 @@
+# All backend services for this application: RDS, Amazon MQ and ElastiCache
+
 # RDS Setup
 resource "aws_db_subnet_group" "javapp-rds-subgrp" {
   name       = "javapp-rds-subgrp"

@@ -1,3 +1,4 @@
+# S3 bucket initialization to save cloud state
 terraform {
   backend "s3" {
     bucket = "terra-javapp-state"
