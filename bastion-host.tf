@@ -29,4 +29,5 @@ resource "aws_instance" "javapp-bastion" {
   }
 
   depends_on = [aws_db_instance.javapp-rds]
+  #Force db instance creation prior
 }
