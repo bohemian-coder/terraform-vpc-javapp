@@ -2,7 +2,7 @@
 resource "aws_security_group" "javapp-beanstalk-elb-sg" {
   name        = "javapp-beanstalk-elb-sg"
   description = "Security group for beanstalk-elb"
-  vpc_id      = module.vpc.default_vpc_id
+  vpc_id      = module.vpc.vpc_id
 
   egress {
     from_port   = 0
@@ -22,7 +22,7 @@ resource "aws_security_group" "javapp-beanstalk-elb-sg" {
 resource "aws_security_group" "javapp-bastion-sg" {
   name        = "javapp-bastion-sg"
   description = "Security group for jump box instance"
-  vpc_id      = module.vpc.default_vpc_id
+  vpc_id      = module.vpc.vpc_id
 
   egress {
     from_port   = 0
@@ -42,7 +42,7 @@ resource "aws_security_group" "javapp-bastion-sg" {
 resource "aws_security_group" "javapp-beanstalk-prod-sg" {
   name        = "javapp-beanstalk-prod-sg"
   description = "Security group for beanstalk instances"
-  vpc_id      = module.vpc.default_vpc_id
+  vpc_id      = module.vpc.vpc_id
 
   egress {
     from_port   = 0
@@ -62,7 +62,7 @@ resource "aws_security_group" "javapp-beanstalk-prod-sg" {
 resource "aws_security_group" "javapp-backend-sg" {
   name        = "javapp-backend-sg"
   description = "Security group for RDS, elastic cache and active MQ"
-  vpc_id      = module.vpc.default_vpc_id
+  vpc_id      = module.vpc.vpc_id
 
   egress {
     from_port   = 0
